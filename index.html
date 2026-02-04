@@ -1056,7 +1056,10 @@ document.addEventListener('DOMContentLoaded', () => {
     backupPayload.append('UTM Source', formData.utm_source);
     backupPayload.append('UTM Medium', formData.utm_medium);
     backupPayload.append('UTM Campaign', formData.utm_campaign);
+    backupPayload.append('UTM Term', formData.utm_term);
+    backupPayload.append('UTM Content', formData.utm_content);
     backupPayload.append('Landing Page', formData.landing_page_url);
+    backupPayload.append('Referrer URL', formData.referrer_url);
     backupPayload.append('_subject', 'New Consultation Request - ' + formData.name);
     backupPayload.append('_template', 'table');
     backupPayload.append('_captcha', 'false');
