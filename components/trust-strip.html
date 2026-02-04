@@ -1,0 +1,113 @@
+<!--
+  REUSABLE: Law Offices of Aaron Resnick - Awards & Media Trust Components
+  Drop into any page for credibility. All images hosted on LawLytics S3.
+-->
+
+<!-- CSS -->
+<style>
+/* === AWARD BADGES (3x2 grid) === */
+.trust-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  justify-items: center;
+  align-items: center;
+  padding: 1.5rem 1rem;
+}
+
+.trust-logo {
+  height: 85px;
+  width: 100%;
+  max-width: 180px;
+  object-fit: contain;
+  opacity: 0.9;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.08));
+}
+
+.trust-logo:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* === AS FEATURED IN (publication logos) === */
+.featured-bar {
+  text-align: center;
+  padding: 1.2rem 0 0;
+  border-top: 1px solid rgba(26, 61, 110, 0.1);
+}
+
+.featured-bar__label {
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #b0b8c4;
+  margin-bottom: 0.8rem;
+  font-weight: 500;
+}
+
+.featured-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem 2rem;
+}
+
+.featured-logo {
+  height: 26px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+  opacity: 1;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.featured-logo:hover {
+  transform: scale(1.05);
+}
+
+.featured-text-link {
+  color: #1a2a3a;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: color 0.3s ease;
+}
+
+.featured-text-link:hover {
+  color: #FA4616;
+}
+
+/* Responsive: stack on mobile */
+@media (max-width: 640px) {
+  .trust-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+</style>
+
+<!-- AWARD BADGES HTML -->
+<div class="trust-strip">
+  <img src="https://s3.amazonaws.com/law-media/uploads/2790/351009/original/Leading-Adviser-Awards-2019-Winner.png" alt="Leading Adviser Awards 2019 Winner" class="trust-logo">
+  <img src="https://s3.amazonaws.com/law-media/uploads/2790/351008/original/Global-Awards-2023-Business-Litigation-Lawyer-Year.png" alt="Global Awards 2023 Business Litigation Lawyer of the Year" class="trust-logo">
+  <img src="https://s3.amazonaws.com/law-media/uploads/2790/351007/original/Super-Lawyers-10-Years-Aaron-Resnick.png" alt="Super Lawyers 10 Years Aaron Resnick" class="trust-logo">
+  <img src="https://s3.amazonaws.com/law-media/uploads/2790/351005/original/Corporate-America-Today-Awards-2020.png" alt="Corporate America Today Awards 2020" class="trust-logo">
+  <img src="https://s3.amazonaws.com/law-media/uploads/2790/351000/original/Legal-Awards-2020-Winner.png" alt="Legal Awards 2020 Winner" class="trust-logo">
+  <img src="https://s3.amazonaws.com/law-media/uploads/2790/313682/original/1734527834439.png?1734528434" alt="Leaders in Law Award USA Florida" class="trust-logo">
+</div>
+
+<!-- AS FEATURED IN HTML -->
+<div class="featured-bar">
+  <div class="featured-bar__label">As Featured In</div>
+  <div class="featured-logos">
+    <a href="https://www.nytimes.com" target="_blank" rel="noopener"><img src="logos/nyt.svg" alt="The New York Times" class="featured-logo"></a>
+    <a href="https://www.wsj.com" target="_blank" rel="noopener"><img src="logos/wsj.svg" alt="The Wall Street Journal" class="featured-logo"></a>
+    <a href="https://www.miamiherald.com" target="_blank" rel="noopener"><img src="logos/miami-herald.png" alt="Miami Herald" class="featured-logo"></a>
+    <a href="https://www.barrons.com" target="_blank" rel="noopener" class="featured-text-link">Barron's</a>
+    <a href="https://abcnews.go.com" target="_blank" rel="noopener" class="featured-text-link">ABC News</a>
+    <a href="https://www.politico.com" target="_blank" rel="noopener"><img src="logos/politico.png" alt="Politico" class="featured-logo"></a>
+    <a href="https://worldredeye.com" target="_blank" rel="noopener"><img src="logos/worldredeye.png" alt="World Red Eye" class="featured-logo"></a>
+  </div>
+</div>

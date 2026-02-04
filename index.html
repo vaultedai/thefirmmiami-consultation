@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schedule Your Consultation | Law Offices of Aaron Resnick, P.A.</title>
+
+<!-- HubSpot Form Integration Placeholder
+     Replace the custom form below with HubSpot embed:
+     <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+     <script>
+       hbspt.forms.create({
+         region: "na2",
+         portalId: "245033720",
+         formId: "84fb3522-fbad-4f78-9866-03360c3999ac",
+         target: "#hubspot-form-container"
+       });
+     </script>
+-->
+
+<!-- Cloudflare Turnstile (invisible CAPTCHA)
+     PRODUCTION: Replace the test key below with your real site key from https://dash.cloudflare.com/turnstile
+     Test key 1x00000000000000000000AA always passes (for development) -->
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue-deep: #001f3f;
+  --blue: #003087;
+  --blue-mid: #0042b5;
+  --blue-light: #1a5ccf;
+  --blue-pale: #e0eaff;
+  --orange: #FA4616;
+  --orange-dark: #d93a0f;
+  --orange-light: #ff6237;
+  --orange-pale: #fff0ec;
+  --orange-glow: rgba(250, 70, 22, 0.12);
+  --cream: #faf8f4;
+  --warm-white: #fefdfb;
+  --white: #ffffff;
+  --text-dark: #1a2a3a;
+  --text-body: #3d4f63;
+  --text-muted: #8a95a5;
+  --text-faint: #b0b8c4;
+  --card-bg: var(--white);
+  --card-border: rgba(26, 61, 110, 0.1);
+  --input-bg: #f7f5f1;
+  --input-border: #ddd8ce;
+  --input-focus: var(--orange);
+  --error: #d94840;
+  --success: #3a9e64;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--text-body);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* === BACKGROUND ATMOSPHERE === */
+.atmosphere {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.atmosphere::before {
+  content: '';
+  position: absolute;
+  top: -25%;
+  right: -15%;
+  width: 60vw;
+  height: 60vw;
+  background: radial-gradient(circle, rgba(230, 126, 34, 0.05) 0%, transparent 60%);
+  animation: drift 25s ease-in-out infinite alternate;
+}
+
+.atmosphere::after {
+  content: '';
+  position: absolute;
+  bottom: -15%;
+  left: -10%;
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, rgba(26, 61, 110, 0.04) 0%, transparent 55%);
+  animation: drift 20s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes drift {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(3%, -3%) scale(1.05); }
+}
+
+/* Deco geometric accent */
+.deco-line {
+  position: fixed;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.deco-line--left {
+  top: 10%;
+  left: 3%;
+  width: 1px;
+  height: 35%;
+  background: linear-gradient(to bottom, transparent, var(--orange-light), transparent);
+  opacity: 0.2;
+}
+
+.deco-line--right {
+  top: 20%;
+  right: 3%;
+  width: 1px;
+  height: 25%;
+  background: linear-gradient(to bottom, transparent, var(--blue-light), transparent);
+  opacity: 0.12;
+}
+
+.deco-diamond {
+  position: fixed;
+  top: 8%;
+  left: 3%;
+  width: 8px;
+  height: 8px;
+  background: var(--orange);
+  transform: rotate(45deg) translateX(-50%);
+  opacity: 0.3;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* === NOISE TEXTURE === */
+.noise {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.02;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+/* === MAIN CONTAINER === */
+.container {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* === HEADER === */
+.header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  animation: fadeUp 0.8s ease-out both;
+  background: var(--blue);
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+}
+
+.header__firm-title {
+  margin-bottom: 0.6rem;
+}
+
+.header__firm-sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 0.1rem;
+}
+
+.header__firm-main {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--orange);
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.header__divider {
+  width: 50px;
+  height: 2px;
+  background: var(--orange);
+  margin: 0.6rem auto;
+  border-radius: 2px;
+}
+
+.header__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1.1rem;
+  border: 1px solid var(--card-border);
+  border-radius: 100px;
+  background: var(--white);
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 1.8rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border-color: transparent;
+  background: var(--orange);
+}
+
+.header__badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--orange);
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(250, 70, 22, 0.6);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+.header__title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--white);
+  margin-bottom: 0.8rem;
+  letter-spacing: -0.01em;
+}
+
+/* unused span rule removed */
+
+/* === FORM CARD === */
+.form-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 2.5rem 2.2rem;
+  position: relative;
+  overflow: hidden;
+  animation: fadeUp 0.8s ease-out 0.15s both;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04), 0 1px 4px rgba(0, 0, 0, 0.03);
+}
+
+.form-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue), var(--orange), var(--blue-light));
+  opacity: 0.8;
+}
+
+.form-intro {
+  text-align: center;
+  font-size: 0.88rem;
+  font-weight: 400;
+  color: var(--text-body);
+  margin-bottom: 1.8rem;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+/* === FORM FIELDS === */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.4rem 1.2rem;
+}
+
+.form-group {
+  position: relative;
+  animation: fadeUp 0.6s ease-out both;
+}
+
+.form-group--full {
+  grid-column: 1 / -1;
+}
+
+.form-group:nth-child(1) { animation-delay: 0.2s; }
+.form-group:nth-child(2) { animation-delay: 0.25s; }
+.form-group:nth-child(3) { animation-delay: 0.3s; }
+.form-group:nth-child(4) { animation-delay: 0.35s; }
+.form-group:nth-child(5) { animation-delay: 0.4s; }
+.form-group:nth-child(6) { animation-delay: 0.45s; }
+.form-group:nth-child(7) { animation-delay: 0.5s; }
+.form-group:nth-child(8) { animation-delay: 0.55s; }
+
+.form-label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 0.55rem;
+}
+
+.form-label .required {
+  color: var(--orange);
+  margin-left: 2px;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 10px;
+  color: var(--text-dark);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 400;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--text-faint);
+  font-weight: 300;
+}
+
+.form-input:hover,
+.form-select:hover,
+.form-textarea:hover {
+  border-color: var(--blue-light);
+  background: var(--white);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--orange);
+  background: var(--white);
+  box-shadow: 0 0 0 3px var(--orange-glow), 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+.form-select {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1.5l5 5 5-5' stroke='%231a3d6e' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 1rem) center;
+  padding-right: 2.5rem;
+}
+
+.form-select option {
+  background: var(--white);
+  color: var(--text-dark);
+  padding: 0.5rem;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 100px;
+  line-height: 1.5;
+}
+
+/* === SUBMIT BUTTON === */
+.submit-wrap {
+  grid-column: 1 / -1;
+  margin-top: 0.5rem;
+  animation: fadeUp 0.6s ease-out 0.6s both;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, var(--orange) 0%, var(--orange-light) 100%);
+  border: none;
+  border-radius: 12px;
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.submit-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--orange-dark) 0%, var(--orange) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(230, 126, 34, 0.3), 0 2px 8px rgba(230, 126, 34, 0.15);
+}
+
+.submit-btn:hover::before {
+  opacity: 1;
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+.submit-btn span {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.submit-btn .arrow {
+  transition: transform 0.3s ease;
+}
+
+.submit-btn:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* === SUCCESS STATE === */
+.success-message {
+  display: none;
+  text-align: center;
+  padding: 3rem 1.5rem;
+  animation: fadeUp 0.6s ease-out both;
+}
+
+.success-message.active {
+  display: block;
+}
+
+.success-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--orange), var(--orange-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  animation: scaleIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.success-message h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--blue-deep);
+  margin-bottom: 0.6rem;
+}
+
+.success-message p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* === CONTACT BAR === */
+.contact-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem 2.5rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  animation: fadeUp 0.8s ease-out 0.3s both;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-item:hover {
+  color: var(--orange);
+}
+
+.contact-item svg {
+  flex-shrink: 0;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.contact-item:hover svg {
+  opacity: 1;
+}
+
+/* === TRUST LOGOS === */
+.trust-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem 1.5rem;
+  justify-items: center;
+  align-items: center;
+  margin-top: 2rem;
+  padding: 1.5rem 1rem;
+  animation: fadeUp 0.8s ease-out 0.45s both;
+}
+
+.trust-logo {
+  height: 85px;
+  width: 100%;
+  max-width: 180px;
+  object-fit: contain;
+  opacity: 0.9;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.08));
+}
+
+.trust-logo:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* === FEATURED IN === */
+.featured-bar {
+  text-align: center;
+  margin-bottom: 1.8rem;
+  padding: 1rem 0;
+  animation: fadeUp 0.8s ease-out 0.1s both;
+}
+
+.featured-bar__label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--blue);
+  margin-bottom: 1.2rem;
+}
+
+.featured-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem 2rem;
+}
+
+.featured-logo {
+  height: 40px;
+  width: auto;
+  max-width: 200px;
+  object-fit: contain;
+  opacity: 1;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.featured-logo:hover {
+  transform: scale(1.05);
+}
+
+.featured-text-link {
+  color: var(--text-dark);
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: color 0.3s ease;
+}
+
+.featured-text-link:hover {
+  color: var(--orange);
+}
+
+/* === FOOTER NOTE === */
+.footer-note {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.72rem;
+  color: var(--text-faint);
+  line-height: 1.5;
+  animation: fadeUp 0.8s ease-out 0.5s both;
+}
+
+/* === HONEYPOT (invisible to humans, bots fill it) === */
+.form-hp { position: absolute; left: -9999px; top: -9999px; opacity: 0; height: 0; width: 0; overflow: hidden; tabindex: -1; }
+
+.footer-note a {
+  color: var(--text-faint);
+  text-decoration: none;
+}
+.footer-note a:hover {
+  color: var(--orange);
+}
+
+/* === ANIMATIONS === */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 640px) {
+  .container {
+    padding: 2rem 1rem 3rem;
+  }
+
+  .form-card {
+    padding: 1.8rem 1.3rem;
+    border-radius: 16px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 1.1rem;
+  }
+
+  .header__title {
+    font-size: 1.8rem;
+  }
+
+  .contact-bar {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .deco-line, .deco-diamond {
+    display: none;
+  }
+}
+
+@media (max-width: 380px) {
+  .form-card {
+    padding: 1.4rem 1rem;
+  }
+}
+
+/* === LOADING SPINNER FOR SUBMIT === */
+.submit-btn.loading span {
+  opacity: 0;
+}
+
+.submit-btn.loading::after {
+  content: '';
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--white);
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  margin: -11px 0 0 -11px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Validation styles */
+.form-input.error,
+.form-select.error,
+.form-textarea.error {
+  border-color: var(--error);
+  box-shadow: 0 0 0 3px rgba(217, 72, 64, 0.1);
+}
+
+.field-error {
+  font-size: 0.72rem;
+  color: var(--error);
+  margin-top: 0.3rem;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: all 0.25s ease;
+}
+
+.field-error.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+</head>
+<body>
+
+<div class="atmosphere"></div>
+<div class="noise"></div>
+<div class="deco-line deco-line--left"></div>
+<div class="deco-line deco-line--right"></div>
+<div class="deco-diamond"></div>
+
+<div class="container">
+  <header class="header">
+    <div class="header__firm-title">
+      <div class="header__firm-sub">Law Offices of</div>
+      <div class="header__firm-main">Aaron Resnick, P.A.</div>
+    </div>
+    <h1 class="header__title">Schedule Your Consultation</h1>
+    <div class="header__divider"></div>
+  </header>
+
+  <div class="featured-bar">
+    <div class="featured-bar__label">As Featured In</div>
+    <div class="featured-logos">
+      <a href="https://www.nytimes.com" target="_blank" rel="noopener"><img src="logos/nyt.svg" alt="The New York Times" class="featured-logo"></a>
+      <a href="https://www.wsj.com" target="_blank" rel="noopener"><img src="logos/wsj.svg" alt="The Wall Street Journal" class="featured-logo"></a>
+      <a href="https://www.miamiherald.com" target="_blank" rel="noopener"><img src="logos/miami-herald.png" alt="Miami Herald" class="featured-logo"></a>
+      <a href="https://www.barrons.com" target="_blank" rel="noopener" class="featured-text-link">Barron's</a>
+      <a href="https://abcnews.go.com" target="_blank" rel="noopener" class="featured-text-link">ABC News</a>
+      <a href="https://www.politico.com" target="_blank" rel="noopener"><img src="logos/politico.png" alt="Politico" class="featured-logo"></a>
+      <a href="https://worldredeye.com" target="_blank" rel="noopener"><img src="logos/worldredeye.png" alt="World Red Eye" class="featured-logo"></a>
+    </div>
+  </div>
+
+  <!-- HubSpot Form Container: Replace contents with HubSpot embed when ready -->
+  <div id="hubspot-form-container">
+    <div class="form-card">
+      <p class="form-intro">Complete the 30-second form below &mdash; Aaron will personally review your inquiry.</p>
+      <form id="consultation-form" class="form-grid" novalidate>
+
+        <div class="form-group">
+          <label class="form-label" for="name">Name <span class="required">*</span></label>
+          <input type="text" id="name" name="name" class="form-input" placeholder="Your full name" required autocomplete="name">
+          <div class="field-error" id="name-error">Please enter your name</div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="phone">Phone <span class="required">*</span></label>
+          <input type="tel" id="phone" name="phone" class="form-input" placeholder="(305) 555-0123" required autocomplete="tel">
+          <div class="field-error" id="phone-error">Please enter your phone number</div>
+        </div>
+
+        <div class="form-group form-group--full">
+          <label class="form-label" for="email">Email <span class="required">*</span></label>
+          <input type="email" id="email" name="email" class="form-input" placeholder="you@example.com" required autocomplete="email">
+          <div class="field-error" id="email-error">Please enter a valid email address</div>
+        </div>
+
+        <div class="form-group form-group--full">
+          <label class="form-label" for="legal-matter">Type of Legal Matter <span class="required">*</span></label>
+          <select id="legal-matter" name="legal_matter" class="form-select" required>
+            <option value="" disabled selected>Select your legal matter</option>
+            <option value="Business Litigation">Business Litigation</option>
+            <option value="Real Estate Litigation">Real Estate Litigation</option>
+            <option value="Entertainment, Sports & Art Law">Entertainment, Sports &amp; Art Law</option>
+            <option value="Franchises">Franchises</option>
+            <option value="Trust & Estate Litigation">Trust &amp; Estate Litigation</option>
+            <option value="Intellectual Property">Intellectual Property</option>
+            <option value="Partnership & Shareholder Disputes">Partnership &amp; Shareholder Disputes</option>
+            <option value="Condo & HOA Law">Condo &amp; HOA Law</option>
+            <option value="Corporate Law">Corporate Law</option>
+            <option value="Construction Law & Developer Disputes">Construction Law &amp; Developer Disputes</option>
+            <option value="Other">Other</option>
+          </select>
+          <div class="field-error" id="legal-matter-error">Please select your type of legal matter</div>
+        </div>
+
+        <div class="form-group form-group--full">
+          <label class="form-label" for="pending">Do you have any pending or potential legal matters or litigation? <span class="required">*</span></label>
+          <select id="pending" name="pending_matters" class="form-select" required>
+            <option value="" disabled selected>Select one</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+          <div class="field-error" id="pending-error">Please make a selection</div>
+        </div>
+
+        <div class="form-group form-group--full">
+          <label class="form-label" for="referral">How did you hear about us?</label>
+          <select id="referral" name="referral_source" class="form-select">
+            <option value="" disabled selected>Select one (optional)</option>
+            <option value="Google search">Google search</option>
+            <option value="Referral">Referral</option>
+            <option value="Existing client">Existing client</option>
+            <option value="Social media">Social media</option>
+            <option value="News/Press">News/Press</option>
+            <option value="AI Chatbot">AI Chatbot</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group form-group--full">
+          <label class="form-label" for="info">Additional Useful Information</label>
+          <textarea id="info" name="additional_info" class="form-textarea" placeholder="Briefly describe your situation or any details you'd like to share..." rows="4"></textarea>
+        </div>
+
+        <!-- Honeypot (anti-bot — hidden from humans) -->
+        <div class="form-hp" aria-hidden="true">
+          <label for="website_url">Website</label>
+          <input type="text" id="website_url" name="website_url" autocomplete="off" tabindex="-1">
+        </div>
+
+        <!-- Cloudflare Turnstile Widget (invisible mode) -->
+        <div class="cf-turnstile" data-sitekey="1x00000000000000000000AA" data-size="compact" data-appearance="interaction-only" data-callback="onTurnstileSuccess"></div>
+
+        <!-- UTM Tracking Hidden Fields -->
+        <input type="hidden" id="utm_source" name="utm_source">
+        <input type="hidden" id="utm_medium" name="utm_medium">
+        <input type="hidden" id="utm_campaign" name="utm_campaign">
+        <input type="hidden" id="utm_term" name="utm_term">
+        <input type="hidden" id="utm_content" name="utm_content">
+        <input type="hidden" id="landing_page_url" name="landing_page_url">
+        <input type="hidden" id="referrer_url" name="referrer_url">
+
+        <div class="submit-wrap">
+          <button type="submit" class="submit-btn" id="submit-btn">
+            <span>
+              Request Consultation
+              <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </button>
+        </div>
+      </form>
+
+      <div class="success-message" id="success-message">
+        <div class="success-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+        </div>
+        <h3>Thank You</h3>
+        <p>Your inquiry has been received. Aaron will personally review your submission and reach out shortly.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-bar">
+    <a class="contact-item" href="https://maps.google.com/?q=100+Biscayne+Blvd+Suite+1607+Miami+FL+33132" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <span>100 Biscayne Blvd., Suite 1607, Miami, FL 33132</span>
+    </a>
+  </div>
+
+  <div class="trust-strip">
+    <img src="https://s3.amazonaws.com/law-media/uploads/2790/351009/original/Leading-Adviser-Awards-2019-Winner.png" alt="Leading Adviser Awards 2019 Winner" class="trust-logo">
+    <img src="https://s3.amazonaws.com/law-media/uploads/2790/351008/original/Global-Awards-2023-Business-Litigation-Lawyer-Year.png" alt="Global Awards 2023 Business Litigation Lawyer of the Year" class="trust-logo">
+    <img src="https://s3.amazonaws.com/law-media/uploads/2790/351007/original/Super-Lawyers-10-Years-Aaron-Resnick.png" alt="Super Lawyers 10 Years Aaron Resnick" class="trust-logo">
+    <img src="https://s3.amazonaws.com/law-media/uploads/2790/351005/original/Corporate-America-Today-Awards-2020.png" alt="Corporate America Today Awards 2020" class="trust-logo">
+    <img src="https://s3.amazonaws.com/law-media/uploads/2790/351000/original/Legal-Awards-2020-Winner.png" alt="Legal Awards 2020 Winner" class="trust-logo">
+    <img src="https://s3.amazonaws.com/law-media/uploads/2790/313682/original/1734527834439.png?1734528434" alt="Leaders in Law Award USA Florida" class="trust-logo">
+  </div>
+
+  <p class="footer-note">
+    The information on this site does not constitute legal advice. Submitting this form does not create an attorney-client relationship.<br>
+    Protected by Cloudflare Turnstile<br>
+    &copy; 2026 Law Offices of Aaron Resnick, P.A.
+  </p>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('consultation-form');
+  const submitBtn = document.getElementById('submit-btn');
+  const successMsg = document.getElementById('success-message');
+
+  // --- Anti-Bot: Record page load time for time-gate check ---
+  const PAGE_LOAD_TIME = Date.now();
+  const MIN_SUBMIT_MS = 3000; // Reject submissions faster than 3 seconds
+
+  // --- Turnstile callback ---
+  let turnstileToken = '';
+  window.onTurnstileSuccess = function(token) { turnstileToken = token; };
+
+  // --- UTM Capture ---
+  const params = new URLSearchParams(window.location.search);
+  const utmFields = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+  utmFields.forEach(field => {
+    const val = params.get(field);
+    if (val) document.getElementById(field).value = val;
+  });
+  document.getElementById('landing_page_url').value = window.location.href;
+  document.getElementById('referrer_url').value = document.referrer || '';
+
+  const requiredFields = [
+    { id: 'name', errorId: 'name-error', validate: v => v.trim().length > 0 },
+    { id: 'phone', errorId: 'phone-error', validate: v => v.replace(/\D/g, '').length >= 7 },
+    { id: 'email', errorId: 'email-error', validate: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) },
+    { id: 'legal-matter', errorId: 'legal-matter-error', validate: v => v !== '' },
+    { id: 'pending', errorId: 'pending-error', validate: v => v !== '' }
+  ];
+
+  requiredFields.forEach(({ id, errorId }) => {
+    const el = document.getElementById(id);
+    const handler = () => {
+      el.classList.remove('error');
+      document.getElementById(errorId).classList.remove('visible');
+    };
+    el.addEventListener('input', handler);
+    el.addEventListener('change', handler);
+  });
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // --- Anti-Bot Layer 1: Honeypot check ---
+    const honeypot = document.getElementById('website_url');
+    if (honeypot && honeypot.value) {
+      // Bot filled the hidden field — silently reject
+      form.style.display = 'none';
+      successMsg.classList.add('active');
+      return;
+    }
+
+    // --- Anti-Bot Layer 2: Time gate ---
+    if (Date.now() - PAGE_LOAD_TIME < MIN_SUBMIT_MS) {
+      // Submitted too fast — likely a bot
+      form.style.display = 'none';
+      successMsg.classList.add('active');
+      return;
+    }
+
+    // --- Field validation ---
+    let hasError = false;
+    requiredFields.forEach(({ id, errorId, validate }) => {
+      const el = document.getElementById(id);
+      const errorEl = document.getElementById(errorId);
+      if (!validate(el.value)) {
+        el.classList.add('error');
+        errorEl.classList.add('visible');
+        hasError = true;
+      } else {
+        el.classList.remove('error');
+        errorEl.classList.remove('visible');
+      }
+    });
+
+    if (hasError) {
+      const firstError = form.querySelector('.error');
+      if (firstError) firstError.focus();
+      return;
+    }
+
+    submitBtn.classList.add('loading');
+    submitBtn.disabled = true;
+
+    // --- Anti-Bot Layer 3: Cloudflare Turnstile ---
+    // If Turnstile loaded, request a token (invisible mode triggers automatically)
+    if (typeof turnstile !== 'undefined' && !turnstileToken) {
+      try {
+        const widgetEl = document.querySelector('.cf-turnstile');
+        if (widgetEl) {
+          turnstileToken = turnstile.getResponse(widgetEl) || '';
+        }
+      } catch (err) {
+        console.warn('Turnstile token retrieval failed, proceeding:', err);
+      }
+    }
+
+    // Collect form data
+    const formData = {
+      name: document.getElementById('name').value,
+      phone: document.getElementById('phone').value,
+      email: document.getElementById('email').value,
+      legal_matter: document.getElementById('legal-matter').value,
+      pending_matters: document.getElementById('pending').value,
+      referral_source: document.getElementById('referral').value,
+      additional_info: document.getElementById('info').value,
+      utm_source: document.getElementById('utm_source').value,
+      utm_medium: document.getElementById('utm_medium').value,
+      utm_campaign: document.getElementById('utm_campaign').value,
+      utm_term: document.getElementById('utm_term').value,
+      utm_content: document.getElementById('utm_content').value,
+      landing_page_url: document.getElementById('landing_page_url').value,
+      referrer_url: document.getElementById('referrer_url').value,
+      turnstile_token: turnstileToken
+    };
+
+    // HubSpot hutk cookie
+    const hutk = document.cookie.replace(/(?:(?:^|.*;\s*)hubspotutk\s*=\s*([^;]*).*$)|^.*$/, '$1') || undefined;
+
+    // --- HubSpot Form Submission ---
+    const HUBSPOT_PORTAL_ID = '245033720';
+    const HUBSPOT_FORM_GUID = '84fb3522-fbad-4f78-9866-03360c3999ac';
+
+    const hubspotPayload = {
+      fields: [
+        { name: 'firstname', value: formData.name },
+        { name: 'phone', value: formData.phone },
+        { name: 'email', value: formData.email },
+        { name: 'type_of_legal_matter', value: formData.legal_matter },
+        { name: 'are_you_currently_being_sued_or_facing_legal_action', value: formData.pending_matters },
+        { name: 'how_did_you_hear_about_us', value: formData.referral_source },
+        { name: 'message', value: formData.additional_info },
+        { name: 'utm_source', value: formData.utm_source },
+        { name: 'utm_medium', value: formData.utm_medium },
+        { name: 'utm_campaign', value: formData.utm_campaign },
+        { name: 'utm_term', value: formData.utm_term },
+        { name: 'utm_content', value: formData.utm_content },
+        { name: 'landing_page', value: formData.landing_page_url },
+        { name: 'referrer_url', value: formData.referrer_url }
+      ],
+      context: {
+        hutk: hutk,
+        pageUri: window.location.href,
+        pageName: document.title
+      }
+    };
+
+    // --- Backup email payload (FormSubmit.co) ---
+    const backupPayload = new FormData();
+    backupPayload.append('Name', formData.name);
+    backupPayload.append('Phone', formData.phone);
+    backupPayload.append('Email', formData.email);
+    backupPayload.append('Legal Matter', formData.legal_matter);
+    backupPayload.append('Pending Litigation', formData.pending_matters);
+    backupPayload.append('How Heard', formData.referral_source);
+    backupPayload.append('Additional Info', formData.additional_info);
+    backupPayload.append('UTM Source', formData.utm_source);
+    backupPayload.append('UTM Medium', formData.utm_medium);
+    backupPayload.append('UTM Campaign', formData.utm_campaign);
+    backupPayload.append('Landing Page', formData.landing_page_url);
+    backupPayload.append('_subject', 'New Consultation Request - ' + formData.name);
+    backupPayload.append('_template', 'table');
+    backupPayload.append('_captcha', 'false');
+
+    // --- Dual Submit: HubSpot (primary) + Email Backup ---
+    let hubspotOk = false;
+    let backupOk = false;
+
+    // Primary: HubSpot
+    try {
+      const response = await fetch(
+        `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_GUID}`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(hubspotPayload)
+        }
+      );
+      if (response.ok) hubspotOk = true;
+      else console.error('HubSpot error:', response.status);
+    } catch (err) {
+      console.error('HubSpot submission failed:', err);
+    }
+
+    // Backup: FormSubmit.co email to firm
+    // NOTE: First submission requires email confirmation from aresnick@thefirmmiami.com
+    try {
+      const backupRes = await fetch('https://formsubmit.co/ajax/jresn02@hotmail.com', {
+        method: 'POST',
+        body: backupPayload
+      });
+      if (backupRes.ok) backupOk = true;
+      else console.error('Backup email error:', backupRes.status);
+    } catch (err) {
+      console.error('Backup submission failed:', err);
+    }
+
+    // Show success if either channel worked
+    if (hubspotOk || backupOk) {
+      form.style.display = 'none';
+      successMsg.classList.add('active');
+    } else {
+      alert('Something went wrong. Please try again or call us directly at (305) 672-7495.');
+    }
+
+    submitBtn.classList.remove('loading');
+    submitBtn.disabled = false;
+  });
+
+  document.getElementById('phone').addEventListener('input', function(e) {
+    let val = this.value.replace(/\D/g, '');
+    if (val.length > 0) {
+      if (val.length <= 3) {
+        this.value = '(' + val;
+      } else if (val.length <= 6) {
+        this.value = '(' + val.slice(0, 3) + ') ' + val.slice(3);
+      } else {
+        this.value = '(' + val.slice(0, 3) + ') ' + val.slice(3, 6) + '-' + val.slice(6, 10);
+      }
+    }
+  });
+});
+</script>
+
+</body>
+</html>

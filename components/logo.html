@@ -1,0 +1,52 @@
+<!--
+  REUSABLE: Law Offices of Aaron Resnick - Logo Component
+  Colors: Gators Orange #FA4616 / Navy Blue #003087
+  Requires: Google Font "Cormorant Garamond"
+-->
+
+<!-- CSS -->
+<style>
+.ar-logo-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  background: #ffffff;
+  padding: 0.7rem 1.8rem 0.7rem 0.8rem;
+  border-radius: 12px;
+}
+
+.ar-monogram {
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+}
+
+.ar-firm-name {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: #003087;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.ar-firm-name span {
+  display: block;
+  font-size: 1.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #001f3f;
+  margin-top: 0.15rem;
+}
+</style>
+
+<!-- HTML -->
+<div class="ar-logo-wrap">
+  <svg class="ar-monogram" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="48" height="48" rx="4" fill="#003087"/>
+    <text x="10" y="35" font-family="'Cormorant Garamond', Georgia, serif" font-size="30" font-weight="700" font-style="italic" fill="#FA4616">A</text>
+    <text x="26" y="35" font-family="'Cormorant Garamond', Georgia, serif" font-size="30" font-weight="700" font-style="italic" fill="white">R</text>
+  </svg>
+  <div class="ar-firm-name">Law Offices of<br><span>Aaron Resnick, P.A.</span></div>
+</div>
