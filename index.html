@@ -1016,9 +1016,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const HUBSPOT_PORTAL_ID = '245033720';
     const HUBSPOT_FORM_GUID = '84fb3522-fbad-4f78-9866-03360c3999ac';
 
+    // Split full name into first and last name for HubSpot
+    const nameParts = formData.name.trim().split(/\s+/);
+    const firstName = nameParts[0] || '';
+    const lastName = nameParts.slice(1).join(' ') || '';
+
     const hubspotPayload = {
       fields: [
-        { name: 'firstname', value: formData.name },
+        { name: 'firstname', value: firstName },
+        { name: 'lastname', value: lastName },
         { name: 'phone', value: formData.phone },
         { name: 'email', value: formData.email },
         { name: 'type_of_legal_matter', value: formData.legal_matter },
